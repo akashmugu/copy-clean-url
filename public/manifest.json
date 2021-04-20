@@ -1,33 +1,33 @@
 {
   "manifest_version": 2,
 
-  "name": "Chrome Extension TypeScript Starter",
-  "description": "Chrome Extension, TypeScript, Visual Studio Code",
+  "name": "Copy Clean URL",
+  "description": "Remove junk from URL and copy clean URL to clipboard",
   "version": "1.0",
 
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
+  "options_page": "options.html",
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/16.png",
+      "32": "images/32.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
+    }
   },
-
-  "content_scripts": [
-      {
-          "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
-      }
-  ],
 
   "background": {
-    "scripts": ["js/vendor.js", "js/background.js"]
+    "scripts": ["js/vendor.js", "js/background.js"],
+    "persistent": false
   },
 
-  "permissions": [
-    "storage",
-    "<all_urls>"
-  ]
+  "permissions": ["storage", "activeTab", "clipboardWrite"],
+
+  "icons": {
+    "16": "images/16.png",
+    "32": "images/32.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
+  }
 }
