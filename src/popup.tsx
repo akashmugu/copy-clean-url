@@ -1,8 +1,9 @@
+import "regenerator-runtime/runtime";
 import React from "react";
 import ReactDOM from "react-dom";
 import detectModifyUrl from "@urltools/detect-modify-url";
 import { DetectModifyUrlConfig } from "@urltools/utils/lib/types/detectModifyUrl";
-import { isNil, useConfig, useTabUrl, validateConfig } from "./utils";
+import { isNil, useConfig, useTabUrl } from "./utils";
 import { ErrorMsg, LoaderMsg } from "./components/misc";
 import { Popup } from "./components/popup";
 import {
@@ -35,9 +36,9 @@ const PopupContainer = () => {
     }
   }
 
-  if (!validateConfig(config)) {
-    return <ErrorMsg {...err_invalidConfig} />;
-  }
+  // if (!validateConfig(config)) {
+  //   return <ErrorMsg {...err_invalidConfig} />;
+  // }
 
   // validations passed. render popup
   const props = detectModifyUrl(config as DetectModifyUrlConfig)(

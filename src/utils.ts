@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Ajv from "ajv";
+// import Ajv from "ajv";
 import { DetectModifyUrlConfig } from "@urltools/utils/lib/types/detectModifyUrl";
 
-export const validateConfig = new Ajv().compile(
-  require("@urltools/utils/lib/schema/detectModifyUrl.json")
-);
+// export const validateConfig = new Ajv().compile(
+//   require("@urltools/utils/lib/schema/detectModifyUrl.json")
+// );
 
 type nil = null | undefined;
 export const isNil = (x: any): x is nil => x == null;
