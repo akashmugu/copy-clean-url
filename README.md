@@ -15,7 +15,6 @@ Chrome Extension, TypeScript and Visual Studio Code
 ## Includes the following
 
 * TypeScript
-* Webpack
 * React
 * Jest
 * Example Code
