@@ -41,10 +41,16 @@ const PopupContainer = () => {
   }
 
   // validations passed. render popup
-  const props = detectModifyUrl(config as DetectModifyUrlConfig)(
+  const data = detectModifyUrl(config as DetectModifyUrlConfig)(
     tabUrl as string
   );
-  return <Popup {...props} />;
+  return (
+    <Popup
+      {...data}
+      onOpenInNewTab={() => chrome.tabs.create({ url: data.url })}
+      onOptionsPage={() => chrome.runtime.openOptionsPage()}
+    />
+  );
 };
 
 ReactDOM.render(
